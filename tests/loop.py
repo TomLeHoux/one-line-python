@@ -1,0 +1,1 @@
+[[while_loop(while_loop) for while_loop in [lambda cycle: [[print(odd(number)) for number in [int(input('Number: '))]], cycle(cycle)][1]]] for odd in [lambda number: "Is odd" if number % 2 == 0 else "Is even"]]
