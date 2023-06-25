@@ -2,7 +2,7 @@
 
 ---
 
-<a href="index.md"><img src="../imgs/lang.gif" width=40% align="right"></a>
+<a href="./index.md"><img src="../imgs/lang.gif" width=40% align="right"></a>
 
 Esqueça o uso de várias linhas no seu código. Condense tudo e faça tudo em apenas uma linha. Arrays são seus aliados, permitindo que você execute todas as tarefas que costumava fazer antes, agora em apenas uma única linha.
 

@@ -2,7 +2,7 @@
 
 ---
 
-[<img src="../imgs/lang.gif" width=40% align="right">](./index.md)
+<a href="./index.md"><img src="../imgs/lang.gif" width=40% align="right"></a>
 
 ¡Olvida el uso de múltiples líneas en tu código! Compacta todo y realiza todo en tan solo una línea. Los arrays son tus aliados, te permiten realizar todas las tareas que solías hacer antes, ahora en una sola línea.
 

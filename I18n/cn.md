@@ -2,7 +2,7 @@
 
 ---
 
-[<img src="../imgs/lang.gif" width=40% align="right">](./index.md)
+<a href="./index.md"><img src="../imgs/lang.gif" width=40% align="right"></a>
 
 忘记在您的代码中使用多行。将一切压缩到一行中并完成所有任务。数组是您的盟友，让您能够以单行代码执行以前需要多行完成的所有任务。
 
