@@ -1,115 +1,143 @@
-# One Line Python
+![One Line Python](imgs/banner.png)
 
-Faça tudo em apenas uma linha!
+---
 
-Lembre-se que arrays são seus aliados, tudo o que você fazia antes com diversas linhas esqueça, faça tudo dentro de arrays, dessa forma você pode ter "linhas" com uma complexidade maior de fazer coisas simples.
+<a href="./I18n/index.md"><img src="imgs/lang.gif" width=40% align="right"></a>
 
-# Regras
+Forget about using multiple lines in your code. Condense everything and accomplish it all in just one line. Arrays are your allies, enabling you to perform all the tasks you used to do before, now in just a single line.
 
-1. Todo o código deve ser escrito em apenas uma linha, isso também se aplica a outros arquivos importados (com exeções dos módulos/bibliotecas padrões e externas);
-2. Não utillize `;` como separador de linhas;
-3. Não utilize `exec()`.
+# Introduction
+Welcome to the One Line Python repository! Here, we explore the art of writing concise Python code by challenging ourselves to accomplish tasks within a single line of code. This repository aims to showcase creative and efficient solutions to various programming problems, all condensed into a single line.
 
-Abaixo foram as formas que encontrei de aplicar diferentes conceitos em apenas uma linha, lembre-se que eles podem não ser os mais eficientes e nem podem funcionar para todos os cenários, essas foram as solições que achei para esses determinados casos.
+# Table of Contents
 
-# Variables
+- [Introduction](#introduction)
+- [Table of Contents](#table-of-contents)
+- [Rules](#rules)
+- [Code Concepts](#code-concepts)
+  - [Variables](#variables)
+    - [Using the `list` data type.](#using-the-list-data-type)
+      - [Modifying the value.](#modifying-the-value)
+    - [Using the `dict` data type.](#using-the-dict-data-type)
+      - [Modifying the value.](#modifying-the-value-1)
+    - [Modifying global variables.](#modifying-global-variables)
+      - [Modifying the value.](#modifying-the-value-2)
+  - [Conditions](#conditions)
+    - [Sequence of if statements](#sequence-of-if-statements)
+  - [Functions](#functions)
+  - [Modules](#modules)
+  - [While Loop](#while-loop)
+  - [Classes](#classes)
+- [Contributing](#contributing)
+- [License](#license)
 
-Encontrei algumas soluções para definir e alterar as variáveis:
+# Rules
 
-## Usando o tipo de data `list`.
+1. All code must be written in just one line, including any imported files (with exceptions for standard and external modules/libraries).
+2. Do not use `;` as a line separator.
+3. Do not use `exec()`.
 
-Recomendo quando você precisa utilizar apenas uma variável.
+Below, you'll find different concepts applied in a one-line format. Keep in mind that these solutions may not always be the most efficient or suitable for every scenario. They are specific solutions found for these particular cases.
+
+# Code Concepts
+
+## Variables
+
+I have found some solutions for defining and modifying variables:
+
+### Using the `list` data type.
+
+Recommended when you only need to use a single variable.
 
 **Syntax**
 ```py
 [... for variable in [value]]
 ```
 
-Você pode tentar implementar mais valores, mas acredito não ser uma boa pratica.
+You can try adding more values, but it's generally not recommended.
 
-### Mudando o valor.
+#### Modifying the value.
 
-A solução que encontrei para alterar o valor da variável é bem inusitada, porém funcional:
+The solution I found to modify the variable value is unconventional but functional:
 
 **Syntax**
 ```py
 [variable.replace(variable, new_value) for variable in [value]]
 ```
 
-## Usando o tipo de data `dict`.
+### Using the `dict` data type.
 
-Muito boa quando se precisa utilizar diversas variáveis.
+Great when you need to use multiple variables.
 
 **Syntax**
 ```py
 [... for variables in [{'variable_A': 'value', 'variable_B': 'value', ...}]]
 ```
 
-### Mudando o valor.
+#### Modifying the value.
 
-Utilize o método `.update` para alterar os valores das variáveis.
+Use the `.update` method to alter the variable values.
 
 **Syntax**
 ```py
 [variables.update({'variable_A': 'new value'}) for variables in [{'variable_A': 'value', 'variable_B': 'value', ...}]]
 ```
 
-## Alterando as variáveis globais.
+### Modifying global variables.
 
-Semelhante ao método anterior podemos atualizar as variáveis globais para adicionarmos nossas variáveis. Esse método é mais interessante do que os outros pois podemos utilizar a variável normalmente como se tivessemos definido ela da forma convencional.
+Similar to the previous method, we can update global variables to add our own variables. This method is more interesting as it allows us to use the variable as if it were defined conventionally.
 
 **Syntax**
 ```py
 [globals().update({'variable':'value'})]
 ```
 
+#### Modifying the value.
 
-### Mudando o valor.
-
-Como não podemos utilizar `=` para alterar o valor da nossa variável, podemos utilizar o mesmo método apresentado para alterar as "variáveis de `dict`".
+Since we cannot use `=` to change the value of our variable, we can use the same method presented for modifying `dict` variables.
 
 **Syntax**
 ```py
 [globals().update({'variable':'new_value'})]
 ```
 
-# Condições
+## Conditions
 
-É tópico pode ser completamente pulado se você já estiver acostumado a utilizar `if else` dentro de arrays, pois não há alterações muito significantes na forma de implementar-las.
+This topic can be skipped if you are already accustomed to using `if-else` statements within arrays since there are no significant changes in the implementation.
 
-Um `if` sozinho sem a necessidade do `else` pode ser adicionado após o `for`: 
+A standalone `if` statement without the need for an `else` can be added after the `for` statement:
 
 **Syntax**
 ```py
 [for variable in [value] if condition]
 ```
 
-Caso seja necessário adicionar um `else` você pode fazer isso adicionando a condição antes do `for`:
+If an `else` statement is needed, you can add the condition before the `for` statement:
 
 **Syntax**
 ```py
 [... if condition else ... for variable in [value] ]
 ```
 
-Se preciso de `elif` você pode fazer isso adicionando novos `ifs` dentro dos `else`:
+If an `elif` statement is needed, you can add additional `if` statements within the `else` section:
 
 **Syntax**
 ```py
 [... if condition else (... if condition else ...)  for variable in [value] ]
 ```
 
-> Os parênteses são opcionais, eles foram adicionados para ajudar na visualização.
+> The parentheses are optional; they were added for better visualization.
 
-## Sequencia de if
+### Sequence of if statements
 
-Existem diversos cenários e com finalidades diferentes, no cenário em que você precisa de uma sequencia de `if` que retornam valores diferentes, para não utilizar `else` coloquei como `None`:
+There are various scenarios with different purposes. In a scenario where you need a sequence of `if` statements that return different values without using `else`, you can represent the `else` condition as `None`:
 
 **Syntax**
 ```py
 [[... if condition else None, ... if condition else None] for variable in [value] ]
 ```
 
-O problema de utilizar dessa forma é justamente o fato dos `None` estarem presente no array. Caso seja um problema podemos utilizar `filter` junto com `list` para removermos esses None:
+The issue with using this approach is that `None` values are present in the array. If this is problematic, you can use `filter` with `list` to remove these `None` values:
 
 **Syntax**
 ```py
@@ -129,9 +157,9 @@ if number > 10: print('Greater than 10')
 if number > 20: print('Greater than 20')
 ```
 
-# Functions
+## Functions
 
-A solução para funções em apenas uma linha é `lambda`. Não é necessário utilizar `return`. Todas as outras formas de definir variáveis podem ser aplicadas aqui.
+The solution for one-line functions is to use `lambda`. There's no need to use `return`. All the methods for defining variables can be applied here.
 
 **Syntax** *(list)*
 ```py
@@ -163,9 +191,9 @@ odd(11) # Is odd
 odd(5) # Is odd
 ```
 
-# Modulos
+## Modules
 
-Para importar modulos podemos utilizar os mesmos conceitos para definir e utilizar a função `__import__`, dessa forma importaremos o módulo completamente:
+To import modules, we can use the same concepts for defining and using the `__import__` function. This way, we can import the module entirely:
 
 **Syntax**
 ```py
@@ -185,9 +213,9 @@ import os
 os.listdir('./')
 ```
 
-# While Loop
+## While Loop
 
-Para criamos `while` precisamos utilizar recursão:
+To create a `while` loop, we need to use recursion:
 
 **Syntax**
 ```py
@@ -209,7 +237,7 @@ while i <= 5:
     i += 1
 ```
 
-Veja outro exemplo abaixo:
+Here's another example:
 
 **Example**
 
@@ -228,9 +256,9 @@ while True:
     print(odd(number))
 ```
 
-# `Class`
+## Classes
 
-A forma com que eu pensei em solucionar a criação de `class` foi usando `lambda` e `SimpleNamespace`:
+The approach I thought of for creating a `class` is to use `lambda` and `SimpleNamespace`:
 
 **Syntax**
 ```py
@@ -254,3 +282,16 @@ class Cat:
 
 Cat('Tom').meow()
 ```
+
+# Contributing
+
+Contributions to the One Line Python repository are highly appreciated! If you have a creative one-liner solution to share or want to improve the existing code, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes with clear and concise messages.
+4. Push your changes to your forked repository.
+5. Submit a pull request, describing your changes in detail.
+
+# License
+The One Line Python repository is licensed under the MIT License.
